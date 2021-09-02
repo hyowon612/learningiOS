@@ -24,9 +24,19 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata/
 **/Breakpoints.xcbkptlist
 *.xcbkptlist
+*.moved-aside
+DerivedData
+.idea/
+*.xccheckout
+*.moved-aside
+xcuserdata/
+*.hmap
+*.ipa
+*.xcworkspace
+*.xcuserstate
+!default.xcworkspace
 
 ## Other
 *.moved-aside
