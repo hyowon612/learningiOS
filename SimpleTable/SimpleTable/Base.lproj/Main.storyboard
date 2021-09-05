@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="s3r-7o-woh">
-                                    <rect key="frame" x="0.0" y="154.5" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="156" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Add Data"/>
                                     <connections>
@@ -45,41 +45,39 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="Jfw-eZ-0PE">
-                                        <rect key="frame" x="0.0" y="93" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="45" id="SGm-tt-pwd" customClass="CustomTableViewCell" customModule="SimpleTable" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="93" width="414" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CustomTableViewCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jfw-eZ-0PE" id="1io-O3-zob" customClass="CustomTableViewCell" customModule="SimpleTable" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SGm-tt-pwd" id="CZg-5h-e5X">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WL-ts-jI6">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrP-N9-JCG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="45"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHr-Qf-O5S">
-                                                    <rect key="frame" x="352" y="11" width="42" height="21.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4N1-UL-bid">
+                                                    <rect key="frame" x="372" y="0.0" width="42" height="45"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="uHr-Qf-O5S" firstAttribute="bottom" secondItem="1io-O3-zob" secondAttribute="bottomMargin" id="0IP-z7-ECW"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="0WL-ts-jI6" secondAttribute="bottom" id="3z6-Nh-9Hc"/>
-                                                <constraint firstItem="0WL-ts-jI6" firstAttribute="leading" secondItem="1io-O3-zob" secondAttribute="leadingMargin" id="C2G-R4-vtu"/>
-                                                <constraint firstItem="0WL-ts-jI6" firstAttribute="top" secondItem="1io-O3-zob" secondAttribute="topMargin" id="M7d-oH-piX"/>
-                                                <constraint firstItem="uHr-Qf-O5S" firstAttribute="top" secondItem="1io-O3-zob" secondAttribute="topMargin" id="TM3-FB-ec8"/>
-                                                <constraint firstItem="uHr-Qf-O5S" firstAttribute="trailing" secondItem="1io-O3-zob" secondAttribute="trailingMargin" id="UKt-3b-K9o"/>
-                                                <constraint firstItem="uHr-Qf-O5S" firstAttribute="top" secondItem="1io-O3-zob" secondAttribute="topMargin" id="Ws3-8g-LbY"/>
-                                                <constraint firstItem="uHr-Qf-O5S" firstAttribute="trailing" secondItem="1io-O3-zob" secondAttribute="trailingMargin" id="s7Z-md-LEt"/>
+                                                <constraint firstItem="IrP-N9-JCG" firstAttribute="leading" secondItem="CZg-5h-e5X" secondAttribute="leading" id="K0n-uC-h51"/>
+                                                <constraint firstItem="4N1-UL-bid" firstAttribute="top" secondItem="CZg-5h-e5X" secondAttribute="top" id="XXa-ZB-C3L"/>
+                                                <constraint firstAttribute="trailing" secondItem="4N1-UL-bid" secondAttribute="trailing" id="aRy-CL-SEJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="IrP-N9-JCG" secondAttribute="bottom" id="jjR-Tb-yoG"/>
+                                                <constraint firstAttribute="bottom" secondItem="4N1-UL-bid" secondAttribute="bottom" id="pl0-rm-kPP"/>
+                                                <constraint firstItem="IrP-N9-JCG" firstAttribute="top" secondItem="CZg-5h-e5X" secondAttribute="top" id="u4j-LN-3Ye"/>
                                             </constraints>
-                                            <connections>
-                                                <outlet property="leftLabel" destination="0WL-ts-jI6" id="o7f-gB-X0W"/>
-                                                <outlet property="rightLabel" destination="uHr-Qf-O5S" id="z8E-Bc-PVN"/>
-                                            </connections>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="leftLabel" destination="IrP-N9-JCG" id="v6r-w5-QcW"/>
+                                            <outlet property="rightLabel" destination="4N1-UL-bid" id="11W-S5-1Mc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -74,8 +74,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             return cell
         } else {
-            let cell: CustomTableViewCell = tableView.dequeueReusableCell(withIdentifier: self.customCellIdentifier, for: indexPath) as! CustomTableViewCell
-                        
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: self.customCellIdentifier, for: indexPath) as? CustomTableViewCell else {
+                return UITableViewCell()
+            }
+            
             cell.leftLabel.text = self.dateFormatter.string(from: self.dates[indexPath.row])
             cell.rightLabel.text = self.timeFormatter.string(from: self.dates[indexPath.row])
             
