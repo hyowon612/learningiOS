@@ -9,9 +9,11 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var textToSet: String?
+    var firstText: String?
+    var secondText: String?
     
-    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var firstLabel: UILabel!
+    @IBOutlet weak var secondLabel: UILabel!
 
 
     override func viewDidLoad() {
@@ -23,7 +25,8 @@ class SecondViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.textLabel.text = self.textToSet
+        self.firstLabel.text = self.firstText
+        self.secondLabel.text = self.secondText
     }
     
 

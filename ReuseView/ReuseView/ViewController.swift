@@ -57,12 +57,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.leftLabel.text = self.dateFormatter.string(from: self.dates[indexPath.row])
         cell.rightLabel.text = self.timeFormatter.string(from: self.dates[indexPath.row])
-        
-        if indexPath.row == 1 {
-            cell.backgroundColor = UIColor.red
-        } else {
-            cell.backgroundColor = UIColor.white
-        }
+//        
+//        if indexPath.row == 1 {
+//            cell.backgroundColor = UIColor.red
+//        } else {
+//            cell.backgroundColor = UIColor.white
+//        }
         
         return cell
     }
@@ -82,7 +82,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return
         }
         
-        nextViewController.textToSet = cell.rightLabel.text
+        nextViewController.firstText = cell.rightLabel.text
+        nextViewController.secondText = cell.leftLabel.text
     }
     
 }
