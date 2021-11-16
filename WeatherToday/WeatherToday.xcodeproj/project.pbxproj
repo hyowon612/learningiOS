@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDCD01E626EDE286005CF69F /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD01E526EDE286005CF69F /* CountryTableViewCell.swift */; };
 		CDDD547226E73BED001645D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD547126E73BED001645D4 /* AppDelegate.swift */; };
 		CDDD547426E73BED001645D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD547326E73BED001645D4 /* SceneDelegate.swift */; };
 		CDDD547626E73BED001645D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD547526E73BED001645D4 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CDCD01E526EDE286005CF69F /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		CDDD546E26E73BED001645D4 /* WeatherToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDD547126E73BED001645D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDDD547326E73BED001645D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				CDDD549326E74F6B001645D4 /* City.swift */,
 				CDDD548D26E73E1A001645D4 /* WeatherViewController.swift */,
 				CDDD547726E73BED001645D4 /* Main.storyboard */,
+				CDCD01E526EDE286005CF69F /* CountryTableViewCell.swift */,
 				CDDD549126E74DC4001645D4 /* CustomTableViewCell.swift */,
 				CDDD547A26E73BF3001645D4 /* Assets.xcassets */,
 				CDDD547C26E73BF3001645D4 /* LaunchScreen.storyboard */,
@@ -159,6 +162,7 @@
 				CDDD547626E73BED001645D4 /* ViewController.swift in Sources */,
 				CDDD549426E74F6B001645D4 /* City.swift in Sources */,
 				CDDD549226E74DC4001645D4 /* CustomTableViewCell.swift in Sources */,
+				CDCD01E626EDE286005CF69F /* CountryTableViewCell.swift in Sources */,
 				CDDD548E26E73E1A001645D4 /* WeatherViewController.swift in Sources */,
 				CDDD548C26E73E0C001645D4 /* CityViewController.swift in Sources */,
 				CDDD548A26E73DFD001645D4 /* CountryViewController.swift in Sources */,

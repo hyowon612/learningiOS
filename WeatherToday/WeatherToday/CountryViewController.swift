@@ -7,12 +7,12 @@
 
 import UIKit
 
-class CountryViewController: UIViewController, UITableViewDataSource {
+class CountryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     let cellIdentifier: String = "cell"
     var countries: [Country] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +30,10 @@ class CountryViewController: UIViewController, UITableViewDataSource {
         }
         
         self.tableView.reloadData()
+        
+        self.tableView.delegate = self
+        self.tableView.rowHeight = 80
+        self.navigationController?.navigationBar.topItem?.title = "세계날씨"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,17 +41,23 @@ class CountryViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? CountryTableViewCell else {
+            return UITableViewCell()
+        }
+
         
         let country: Country = self.countries[indexPath.row]
         
-        cell.imageView?.image = UIImage(named: "flag_\(country.assetName)")
-        cell.textLabel?.text = country.assetName
+        cell.countryImageView.image = UIImage(named: "flag_\(country.assetName)")
+        cell.countryNameLabel.text = country.countryName
         cell.accessoryType = .disclosureIndicator
+        cell.countryAssetName = country.assetName
         
         return cell
     }
-
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -59,11 +69,11 @@ class CountryViewController: UIViewController, UITableViewDataSource {
             return
         }
         
-        guard let cell = sender as? UITableViewCell else {
+        guard let cell = sender as? CountryTableViewCell else {
             return
         }
-        
-        nextViewController.assetName = cell.textLabel?.text
+        nextViewController.title = cell.countryNameLabel.text
+        nextViewController.assetName = cell.countryAssetName
     }
 
 }

@@ -8,9 +8,24 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
+    
+    var image: UIImage?
+    var name: String?
+    var temperature: String?
+    var rain: String?
+
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var rainLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = image
+        nameLabel.text = name
+        temperatureLabel.text = temperature
+        rainLabel.text = rain
+        
 
         // Do any additional setup after loading the view.
     }

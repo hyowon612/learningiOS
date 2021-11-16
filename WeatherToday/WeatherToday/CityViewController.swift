@@ -7,12 +7,12 @@
 
 import UIKit
 
-class CityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CityViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let customCellIdentifier: String = "customCell"
     var cities: [City] = []
-    var assetName: String?
+    var assetName: String = ""
     
 
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Do any additional setup after loading the view.
         
         let jsonDecoder: JSONDecoder = JSONDecoder()
-        guard let dataAsset: NSDataAsset = NSDataAsset(name: assetName!) else {
+        guard let dataAsset: NSDataAsset = NSDataAsset(name: assetName) else {
             return
         }
         
@@ -32,11 +32,12 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         self.tableView.reloadData()
-        
-        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.tableView.rowHeight = 100
     }
-    
+}
+
+extension CityViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.cities.count
     }
@@ -49,26 +50,43 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let city: City = self.cities[indexPath.row]
         
-        
-      
-        cell.weatherImageView.image = UIImage(named: "cloudy")
+        cell.accessoryType = .disclosureIndicator
         cell.nameLabel.text = city.cityName
-        cell.temperatureLabel.text = String(city.celsius)
-        cell.rainLabel.text = String(city.rainfall_probability)
+        cell.temperatureLabel.text = "섭씨 \(String(city.celsius))도"
+        cell.rainLabel.text = "강수확률 \(String(city.rainfall_probability))%"
+        
+        switch city.rainfall_probability {
+        case 40..<60:
+            cell.weatherImageView.image = UIImage(named: "cloudy")
+        case 60..<Int.max:
+            cell.weatherImageView.image = UIImage(named: "rainy")
+        default:
+            cell.weatherImageView.image = UIImage(named: "sunny")
+        }
+        
+        if city.celsius < 0 && city.rainfall_probability >= 40 {
+            cell.weatherImageView.image = UIImage(named: "snowy")
+        }
         
         
         return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        guard let nextViewController: WeatherViewController = segue.destination as? WeatherViewController else {
+            return
+        }
+        
+        guard let cell = sender as? CustomTableViewCell else {
+            return
+        }
+        nextViewController.title = cell.nameLabel.text
+        nextViewController.image = cell.weatherImageView.image
+        nextViewController.name = cell.nameLabel.text
+        nextViewController.temperature = cell.temperatureLabel.text
+        nextViewController.rain = cell.rainLabel.text
     }
-    */
-
 }
